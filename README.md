@@ -96,7 +96,7 @@ python alexnet.py --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-de
 
 Feel free to submit issues or pull requests if you find any bugs or have suggestions for improvements.
 
-# LICENSE
+# License
 
 This project is licensed under the Apache License 2.0.
 
