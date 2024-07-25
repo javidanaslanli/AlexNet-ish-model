@@ -49,7 +49,7 @@ data/
 To train and validate the model, use the following command:
 
 ```sh
-python alexnet.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
+python main.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
 ```
 ## Command line arguments
 
