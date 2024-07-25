@@ -49,7 +49,7 @@ data/
 To train and validate the model, use the following command:
 
 ```sh
-python main.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
+python main.py --data your/dataset/path --num_classes 525 --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
 ```
 ## Command line arguments
 
@@ -59,6 +59,7 @@ python main.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 -
 - --gamma: Learning rate step gamma (default: 0.7)
 - --weight-decay: Weight decay (default: 1e-4)
 - --save-model: Save the current model
+- --num_classes: Number of classes in dataset (default 525)
 
 
 ## Model Saving
@@ -84,7 +85,7 @@ pip install -r requirements.txt
 4.Run the model:
 
 ```sh
-python alexnet.py --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
+python main.py --data your/data/path --num_classes 525 --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
 ```
 
 ## Notes
