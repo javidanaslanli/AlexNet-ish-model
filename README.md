@@ -53,12 +53,12 @@ python main.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 -
 ```
 ## Command line arguments
 
---batch-size: Input batch size for training (default: 64)
---epochs: Number of epochs to train (default: 90)
---lr: Learning rate (default: 0.001)
---gamma: Learning rate step gamma (default: 0.7)
---weight-decay: Weight decay (default: 1e-4)
---save-model: Save the current model
+- --batch-size: Input batch size for training (default: 64)
+- --epochs: Number of epochs to train (default: 90)
+- --lr: Learning rate (default: 0.001)
+- --gamma: Learning rate step gamma (default: 0.7)
+- --weight-decay: Weight decay (default: 1e-4)
+- --save-model: Save the current model
 
 
 ## Model Saving
