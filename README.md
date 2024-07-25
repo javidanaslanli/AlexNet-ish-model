@@ -59,7 +59,7 @@ python main.py --data your/dataset/path --num_classes 525 --batch-size 64 --epoc
 - --gamma: Learning rate step gamma (default: 0.7)
 - --weight-decay: Weight decay (default: 1e-4)
 - --save-model: Save the current model
-- --num_classes: Number of classes in dataset (default 525)
+- --num_classes: Number of classes in dataset (default: 525)
 
 
 ## Model Saving
@@ -71,7 +71,7 @@ The model will be saved to alexnet.pt if the --save-model flag is provided.
 1.Clone the repository:
 
 ```sh
-git clone https://github.com/javidanaslanli/AlexNet-ish-model.git
+git clone https://github.com/javidanaslanli/AlexNet-ish-model
 cd AlexNet-ish-model
 ```
 2.Install the requirements:
