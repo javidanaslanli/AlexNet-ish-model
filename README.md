@@ -8,7 +8,7 @@ So I decided to make some changes, that changes made model to reach 62% accuracy
 
 ## Changes I made
 
-Firstly, original paper they use Local response normalization and I sticked to LRN in my model, but I changed the number of linear layers which is 3 in original paper but I used only 2. Because I found that 3 linear layers were causing overfitting in my model. Second change I made is to use AdamW optimizer rather than SGD for speed. I also, changed the convolutional layers parameters to decrease the number of parameters in model (it was too high and causing overfitting). I did not use PCA data preprocessing as the used in the paper but I added some noise o data with using random transformations from torchvision. I used 227x227 as input but first I resized images to 256x256 then I get an center crop from image 227x227.
+Firstly, original paper they use Local response normalization and I sticked to LRN in my model, but I changed the number of linear layers which is 3 in original paper but I used only 2. Because I found that 3 linear layers were causing overfitting in my model. Second change I made is to use AdamW optimizer rather than SGD for speed. I also, changed the convolutional layers parameters to decrease the number of parameters in model (it was too high and causing overfitting). I did not use PCA data preprocessing as the used in the paper but I added some noise to data with using random transformations from torchvision. I used 227x227 as input but first I resized images to 256x256 then I get an center crop from image 227x227.
 
 ![Screenshot 2024-07-25 162636](https://github.com/user-attachments/assets/65516193-f975-43b9-8b91-af2fd82c5f21)
 
@@ -19,6 +19,86 @@ To install the necessary dependencies, run:
 ```sh
 pip install -r requirements.txt
 ```
+## Data Preparation
+
+Download your dataset and ensure it is organized in a structure similar to the ImageFolder structure from torchvision. The example assumes the dataset is split into training and validation directories.
+Note: model takes input as 3x227x227, so whatever your dataset image size is they will be resized. Also the train folder should be called train and validation should be called valid.
+
+```plaintext
+data/
+    train/
+        class1/
+            img1.jpg
+            img2.jpg
+            ...
+        class2/
+            img1.jpg
+            img2.jpg
+            ...
+    valid/
+        class1/
+            img1.jpg
+            ...
+        class2/
+            img1.jpg
+            ...
+```
+
+## Running the model
+
+To train and validate the model, use the following command:
+
+```sh
+python alexnet.py --data your/dataset/path --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
+```
+## Command line arguments
+
+--batch-size: Input batch size for training (default: 64)
+--epochs: Number of epochs to train (default: 90)
+--lr: Learning rate (default: 0.001)
+--gamma: Learning rate step gamma (default: 0.7)
+--weight-decay: Weight decay (default: 1e-4)
+--save-model: Save the current model
+
+
+## Model Saving
+
+The model will be saved to alexnet.pt if the --save-model flag is provided.
+
+## Example usage
+
+1.Clone the repository:
+
+```sh
+git clone https://github.com/javidanaslanli/AlexNet-ish-model.git
+cd AlexNet-ish-model
+```
+2.Install the requirements:
+
+```sh
+pip install -r requirements.txt
+```
+
+3.Prepare your dataset as described in the "Data Preparation" section.
+
+4.Run the model:
+
+```sh
+python alexnet.py --batch-size 64 --epochs 90 --lr 0.001 --gamma 0.7 --weight-decay 1e-4 --save-model
+```
+
+## Notes
+
+- Ensure you have multiple GPUs available for distributed training.
+- Modify the dataset paths in alexnet.py to point to your dataset's location
+
+## Contributing 
+
+Feel free to submit issues or pull requests if you find any bugs or have suggestions for improvements.
+
+# LICENSE
+
+This project is licensed under the Apache License 2.0.
 
 
 
